@@ -24,8 +24,13 @@ public class Generic {
         Box<Boolean> box2 = new Box<Boolean>(true);
         box2.Container = false;
         System.out.println(box2.getValue());
+        System.out.println("------------------------------------------------------------------------");
 
-
-
+    /*
+    Write a program who take list and a value
+    and returnn the count of the value from the list
+     */
+    Integer[] arr = {10, 20, 30, 40, 10};
+        System.out.println("Count of given number is  : " + Box.countNum(arr, 10));
     }
 }
