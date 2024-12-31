@@ -5,10 +5,10 @@ import com.sun.security.jgss.GSSUtil;
 import java.util.*;
 
 public class Iterable_and_Interator {
-    public static <T> void removeEven(List<T> arr, T value){
-        Iterator<T> it = arr.iterator();
+    public static <T> void removeEven(Collection<?> arr, T value){
+        Iterator<?> it = arr.iterator();
         while(it.hasNext()){
-            T x = it.next();
+            T x = (T) it.next();
             if(x.equals(value)){
                 it.remove();
             }
@@ -18,6 +18,7 @@ public class Iterable_and_Interator {
     public static void main(String[] args) {
         List<Integer> first = new ArrayList<>();
         List<String> second = new ArrayList<>();
+        Collection<Integer> third = new HashSet<>();
         first.add(1);
         first.add(2);
         first.add(3);
@@ -31,6 +32,11 @@ public class Iterable_and_Interator {
         second.add("def");
         second.add("ghi");
         second.add("jkl");
+
+        third.add(1);
+        third.add(1);
+        third.add(2);
+        third.add(2);
 
         System.out.println(first.size());
         System.out.println(first.isEmpty());
@@ -54,5 +60,8 @@ public class Iterable_and_Interator {
         System.out.println("List Before remove function for second : " + second);
         removeEven(second, "abc");
         System.out.println("Final list for second : " + second);
+        System.out.println("List Before remove function for third : " + third);
+        removeEven(third, 1);
+        System.out.println("Final list for second : " + third);
     }
 }
