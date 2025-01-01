@@ -9,11 +9,14 @@ public class Iterable_and_Interator {
         Iterator<?> it = arr.iterator();
         while(it.hasNext()){
             T x = (T) it.next();
+            if(x instanceof Number) {
+                System.out.println("this is new : " + ((Number) x).intValue() / 2);
+            }
             if(x.equals(value)){
+                System.out.println();
                 it.remove();
             }
         }
-
     }
     public static void main(String[] args) {
         List<Integer> first = new ArrayList<>();
